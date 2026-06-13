@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Earthen — Modern Electronics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== OVERLAY ===== -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav-header" id="navbar">
+    <nav class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-mark">B</span>
+        <span class="logo-text">Brand Earthen</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#shop" class="nav-link">Shop</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="toggle-icon" id="toggleIcon">☽</span>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">New Collection 2025</p>
+      <h1 class="hero-title">
+        Technology<br/>
+        <em>rooted in</em><br/>
+        the earth.
+      </h1>
+      <p class="hero-sub">Premium electronics crafted for those who appreciate the warmth of natural aesthetics and the precision of modern engineering.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-primary">Shop Collection</a>
+        <a href="#about" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-badge">Featured</div>
+        <div class="hero-product-img">
+          <img src="https://placehold.co/320x260/C4956A/F8F5F0?text=𝄞+AuraX+Pro" alt="AuraX Pro Headphones" />
+        </div>
+        <div class="hero-card-info">
+          <span class="hero-product-name">AuraX Pro Headphones</span>
+          <span class="hero-product-price">R289</span>
+        </div>
+        <button class="btn btn-primary hero-add-btn" onclick="addToCartById(1)">Add to Cart</button>
+      </div>
+      <div class="hero-bg-shape"></div>
+    </div>
+  </section>
+
+  <!-- ===== SHOP SECTION ===== -->
+  <section id="shop" class="shop-section">
+    <div class="section-header">
+      <p class="section-eyebrow">Curated for you</p>
+      <h2 class="section-title">The Collection</h2>
+    </div>
+
+    <!-- Search + Filters -->
+    <div class="shop-controls">
+      <div class="search-wrap">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search products…" />
+      </div>
+      <div class="filter-btns" id="filterBtns">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="audio">Audio</button>
+        <button class="filter-btn" data-filter="phones">Phones</button>
+        <button class="filter-btn" data-filter="wearables">Wearables</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+        <button class="filter-btn" data-filter="laptops">Laptops</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="productGrid"></div>
+    <p class="no-results" id="noResults">No products found. Try a different search.</p>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-eyebrow">Who we are</p>
+        <h2 class="section-title">Built on <em>intention</em></h2>
+        <p class="about-body">Brand Earthen was founded on a simple belief: technology should feel as grounded as the earth itself. We handpick electronics that marry form with function — products that earn a place in your life, not just your drawer.</p>
+        <p class="about-body">Every item in our collection is chosen for its build quality, longevity, and design philosophy. No disposable tech. No noise.</p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Products Curated</span></div>
+          <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Happy Customers</span></div>
+          <div class="stat"><span class="stat-num">4yr</span><span class="stat-label">In the Market</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-img-block">
+          <img src="https://placehold.co/480x560/E8E0D5/6B5E52?text=Our+Story" alt="About Brand Earthen" />
+          <div class="about-img-badge">Est. 2021</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <p class="section-eyebrow">Get in touch</p>
+        <h2 class="section-title">Let's talk.</h2>
+        <p class="contact-sub">Questions about an order, a product, or just want to say hello? We reply within 24 hours.</p>
+        <div class="contact-info">
+          <span>seth@brandearthen.com</span>
+          <span>+27 12 345 6789</span>
+          <span>Mon–Fri, 9am – 6pm</span>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" placeholder="Doe" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="jane@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Tell us how we can help…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Send Message</button>
+        <p class="form-success" id="formSuccess">Message sent! We'll be in touch soon.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">B</span>
+        <span class="footer-name">Brand Earthen</span>
+        <p class="footer-tagline">Technology rooted in the earth.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2025 Brand Earthen. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== PRODUCT MODAL ===== -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="productModal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.35">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <p>Your cart is empty.</p>
+      <a href="#shop" class="btn btn-ghost" onclick="closeCart()">Browse Products</a>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">R0.00</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">R0.00</span>
+      </div>
+      <button class="btn btn-primary w-full" onclick="handleCheckout()">Checkout</button>
+      <button class="btn btn-ghost w-full" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </aside>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
